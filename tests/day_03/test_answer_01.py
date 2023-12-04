@@ -15,3 +15,13 @@ def test_case_1():
             "day_03.txt"
         )
     ) == 4361
+
+
+def test_puzzle_input():
+    """test results from real puzzle input"""
+    assert answer_01(
+        os.path.join(
+            "inputs",
+            "day_03.txt"
+        )
+    ) == 531932
