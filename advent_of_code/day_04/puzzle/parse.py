@@ -18,21 +18,17 @@ def parse_input(input_file: str) -> Dict[int, Card]:
     with open(input_file, encoding="utf-8") as file_input:
         for line in file_input:
             card_num, lists = line.split(":")
-            card_num = int(card_num.split(" ")[-1])
+            card_num = int(card_num.split()[-1])
             winner_values, values_have = lists.strip().split("|")
             winner_values = set(
                 map(
                     int,
-                    filter(
-                        lambda number: number.isnumeric(),
-                        winner_values.split(" "))
+                    winner_values.split()
                 )
             )
             values_have = map(
-                int, filter(
-                    lambda number: number.isnumeric(),
-                    values_have.split(" ")
-                )
+                int,
+                values_have.split()
             )
 
             cards[card_num] = Card(card_num, 1, winner_values, values_have)

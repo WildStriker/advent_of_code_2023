@@ -33,7 +33,7 @@ def parse_input(input_file: str) -> List[Game]:
 
             game_id, rounds_string = game_line.split(":")
 
-            game_id = int(game_id.split(" ")[1])
+            game_id = int(game_id.split()[1])
             rounds_string = rounds_string.split(";")
 
             parsed_rounds = []
@@ -44,7 +44,7 @@ def parse_input(input_file: str) -> List[Game]:
                 parsed_cubes = []
                 parsed_rounds.append(parsed_cubes)
                 for cube_string in cubes_string:
-                    amount, color = cube_string.strip().split(" ")
+                    amount, color = cube_string.split()
                     amount = int(amount)
 
                     parsed_cubes.append(Cube(amount, color))
