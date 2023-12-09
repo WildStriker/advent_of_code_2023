@@ -13,7 +13,14 @@ class Card:
 
 
 def parse_input(input_file: str) -> Dict[int, Card]:
-    """TODO"""
+    """parse input file to dictioanry of cards
+
+    Args:
+        input_file (str): puzzle input
+
+    Returns:
+        Dict[int, Card]: parsed game card info
+    """
     cards = {}
     with open(input_file, encoding="utf-8") as file_input:
         for line in file_input:
