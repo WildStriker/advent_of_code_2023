@@ -17,6 +17,7 @@ def test_case_1():
         6
     ) == 16
 
+
 def test_puzzle_input():
     """test results from real puzzle input"""
     assert answer_01(
@@ -26,4 +27,3 @@ def test_puzzle_input():
         ),
         64
     ) == 3858
-
